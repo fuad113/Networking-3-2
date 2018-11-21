@@ -1,0 +1,12 @@
+From: anfuad23@gmail.com
+To: anfuad23@gmail.com
+MIME-Version: 1.0
+Subject: Random mail testing
+Content-Type: multipart/mixed; boundary=sep
+--sep
+hii i am awsaf
+i am fuad
+tata
+--sep--
+.
+QUIT

@@ -1,0 +1,6 @@
+HELO DESKTOP-VTPQ9MQ
+MAIL FROM:<anfuad23@gmail.com>
+RCPT TO:<anfuad23@gmail.com>
+DATA
+QUIT
+
