@@ -204,7 +204,7 @@ int main(int argc, char *argv[]){
 	{
 		char buffer[1024];
 		bytes_received = recvfrom(sockfd, buffer, 1024, 0, (struct sockaddr*) &router_address, &addrlen);
-		cout<<bytes_received<<endl;
+		//cout<<bytes_received<<endl;
 		if(bytes_received!=-1)
 		{
 			string command;
@@ -329,7 +329,7 @@ int main(int argc, char *argv[]){
                 	}
 
                 	else
-                		cout<< "Cannot Send Message to Router " << ip2;
+                		cout<< "Cannot Send Message to Router " << ip2 << "\n";
 
     
 
