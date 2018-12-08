@@ -78,7 +78,10 @@ void PrintRoutingTable()
 
     while(itr != routing_table.end())
     {
-        cout << itr->first <<"		  "<< itr->second.nxthop << "		  " << itr->second.cost << endl;
+    	if(itr->second.cost ==0)
+    		cout << itr->first <<"		  "<< itr->second.nxthop << "		  " << "        0" << endl;
+    	else
+        	cout << itr->first <<"		  "<< itr->second.nxthop << "		  " << itr->second.cost << endl;
         itr++;
     }
 
@@ -275,7 +278,12 @@ int main(int argc, char *argv[]){
                 	if(routing_table[ip2].nxthop == ip2)
                 	{
                 		routing_table[ip2].cost=c;
-                	
+                	}
+
+                	else if(routing_table[ip2].cost > c)
+                	{
+                		routing_table[ip2].cost=c;
+                		routing_table[ip2].nxthop=ip2;
                 	}
                 
                 }
@@ -285,6 +293,11 @@ int main(int argc, char *argv[]){
                 	if(routing_table[ip1].nxthop == ip1)
                 	{
                 		routing_table[ip1].cost=c;
+                	}
+                	else if(routing_table[ip1].cost > c)
+                	{
+                		routing_table[ip1].cost=c;
+                		routing_table[ip1].nxthop=ip1;
                 	}
                 }
                 
@@ -298,8 +311,8 @@ int main(int argc, char *argv[]){
 
                 string ip1,ip2,msg;
             	int temp,msglen;
-            	int arr[10];
             	int k=0;
+            	vector<int> arr;
 
             	for(int i=4;i<bytes_received;i++)
             	{
@@ -307,8 +320,8 @@ int main(int argc, char *argv[]){
             		if(temp < 0)
             			temp=temp+256;
 
-   					arr[k]=temp;
-   					k++;
+   					arr.push_back(temp);
+   					
             		
             	}
 
@@ -318,8 +331,10 @@ int main(int argc, char *argv[]){
                 int tempc1=(int) arr[8];
                 int tempc2=(int) arr[9];
 
+
+
                 msglen=(tempc2*256) + tempc1;
-             
+
                 int temp2=msglen+10;
 
                 for(int i=10;i<temp2;i++)
@@ -330,14 +345,15 @@ int main(int argc, char *argv[]){
 
                 if(ip2 == myrouterip)
                 {
-                	cout<< "Message From " + ip1 + " : " + msg + "\n";
+                	cout<< "Message From " + ip1 + " : " + msg + "\n\n";
                 }
 
                 else 
 
                 {   
+                	
 
-                	if(routing_table[ip2].nxthop != "  -  ")
+                	if(routing_table[ip2].cost != INF)
                 	{
                 		cout << "Message Sent to Router-" << routing_table[ip2].nxthop << "\n\n" ;
                 		send_address.sin_addr.s_addr = inet_addr(routing_table[ip2].nxthop.c_str());
