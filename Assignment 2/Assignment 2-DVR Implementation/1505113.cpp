@@ -46,21 +46,39 @@ string IntToString(int a)
 
 }
 
+int StringToInt(string str)
+{
+  int sum=0;
+  int m=1;
+
+  for(int i=str.length()-1;i>=0;i--)
+  {
+  	sum+=(str[i]-48)*m;
+  	m*=10;
+  }
+
+  return sum;
+
+}
+
 
 map <string,router> routing_table; 
+
+
+
 
 
 void PrintRoutingTable()
 {
 
-	cout<< "Destination			" << "Next Hop			" << " Cost\n" ;
-	cout<< "-----------			" << "---------			" << " -------\n" ;
+	cout<< "Destination		  " << "Next Hop		  " << "Cost\n" ;
+	cout<< "-----------		  " << "---------		  " << "-----\n" ;
 
     auto itr = routing_table.begin();
 
     while(itr != routing_table.end())
     {
-        cout << itr->first <<"			"<< itr->second.nxthop << "			" << itr->second.cost << endl;
+        cout << itr->first <<"		  "<< itr->second.nxthop << "		  " << itr->second.cost << endl;
         itr++;
     }
 
@@ -205,6 +223,7 @@ int main(int argc, char *argv[]){
 		char buffer[1024];
 		bytes_received = recvfrom(sockfd, buffer, 1024, 0, (struct sockaddr*) &router_address, &addrlen);
 		//cout<<bytes_received<<endl;
+
 		if(bytes_received!=-1)
 		{
 			string command;
@@ -242,37 +261,32 @@ int main(int argc, char *argv[]){
                 
                 ip1= IntToString(arr[0])+ "."+IntToString(arr[1])+ "." + IntToString(arr[2])+"."+IntToString(arr[3]);
                 ip2= IntToString(arr[4])+ "."+IntToString(arr[5])+ "." + IntToString(arr[6])+"."+IntToString(arr[7]);
-                c=(int) arr[8];
+                
+                int tempc1=(int) arr[8];
+                int tempc2=(int) arr[9];
+
+                c=(tempc2*256)+tempc1;
+
 
                 
                 if(ip1== myrouterip)
-                	NeighbourCostList[ip2]=c;
-                else
-                	NeighbourCostList[ip1]=c;
-
-
-
-                auto it = NeighbourCostList.begin();
-                
-                while(it != NeighbourCostList.end())
                 {
-                	int temp1,temp2;
-
-                	string temp_ip=it->first;
-
-                	temp1=routing_table[it->first].cost;
-                	temp2=it->second;
-
-                    if(temp1>temp2)
-                     {
-                       routing_table[temp_ip].nxthop = temp_ip;
-                       routing_table[temp_ip].cost = temp2;
-
-                     }
-                        
-                    it++;
+                	NeighbourCostList[ip2]=c;
+                	if(routing_table[ip2].nxthop == ip2)
+                	{
+                		routing_table[ip2].cost=c;
+                	
+                	}
+                
                 }
-
+                else
+                {
+                	NeighbourCostList[ip1]=c;
+                	if(routing_table[ip1].nxthop == ip1)
+                	{
+                		routing_table[ip1].cost=c;
+                	}
+                }
                 
             }
 
@@ -301,11 +315,14 @@ int main(int argc, char *argv[]){
                 
                 ip1= IntToString(arr[0])+ "."+IntToString(arr[1])+ "." + IntToString(arr[2])+"."+IntToString(arr[3]);
                 ip2= IntToString(arr[4])+ "."+IntToString(arr[5])+ "." + IntToString(arr[6])+"."+IntToString(arr[7]);
-                msglen=(int) arr[8];
-             
-                temp=msglen+10;
+                int tempc1=(int) arr[8];
+                int tempc2=(int) arr[9];
 
-                for(int i=10;i<temp;i++)
+                msglen=(tempc2*256) + tempc1;
+             
+                int temp2=msglen+10;
+
+                for(int i=10;i<temp2;i++)
                 {
                 	msg.push_back(arr[i]);
                 }	
@@ -322,7 +339,7 @@ int main(int argc, char *argv[]){
 
                 	if(routing_table[ip2].nxthop != "  -  ")
                 	{
-                		cout << "Message Sent to Router-" << routing_table[ip2].nxthop << "\n" ;
+                		cout << "Message Sent to Router-" << routing_table[ip2].nxthop << "\n\n" ;
                 		send_address.sin_addr.s_addr = inet_addr(routing_table[ip2].nxthop.c_str());
 					    sendto(sockfd, buffer, 1024, 0, (struct sockaddr*) &send_address, sizeof(sockaddr_in));
 
@@ -338,17 +355,19 @@ int main(int argc, char *argv[]){
 
             }
 
+
+
             else if(command[0]=='c' && command[1]=='l' && command[2]=='k')
             {
 
-            	string str = "Table: ";
+            	string str = "";
  
     			auto it = routing_table.begin();
 
     			while(it != routing_table.end())
     		    {
         			if(it->second.nxthop != "  -  ")
-           				str += myrouterip + " -> " + it->first + " -> " + IntToString(it->second.cost) + "\n";
+           				str += myrouterip + ">" + it->first + ">" + IntToString(it->second.cost) + "+";
  
         		    it++;
     			}
@@ -365,8 +384,86 @@ int main(int argc, char *argv[]){
 					sendto(sockfd, tempbuffer, 1024, 0, (struct sockaddr*) &send_address, sizeof(sockaddr_in));
     			}
 
-            }	          
+            }
 
+
+
+            else
+            {
+
+            	stringstream ss1;
+                ss1<< buffer;
+                string temp1;
+                vector<string> received_message;
+                
+                while(getline(ss1,temp1,'+'))
+                {
+ 					received_message.push_back(temp1);
+                }
+
+
+                for(int i=0;i<received_message.size();i++)
+                {
+
+                	stringstream ss;
+                	ss<< received_message[i];
+                	string temp;
+                	vector<string> received_vector;
+                
+                	while(getline(ss,temp,'>'))
+                	{
+ 						received_vector.push_back(temp);
+                	}
+
+
+
+                	string sender=received_vector[0];
+                	string sender_neighbour=received_vector[1];
+                	int cost_received= StringToInt(received_vector[2]);
+
+                	
+                	//cout<< "value of i: " << i <<endl; 
+                	//cout<<  sender << endl;
+                	//cout<< sender_neighbour<<endl;
+                	//cout<<  cost_received<< endl;
+                    
+                     
+                	if(routing_table[sender_neighbour].nxthop == sender)
+                		routing_table[sender_neighbour].cost= routing_table[sender].cost +cost_received;
+
+                	if(sender_neighbour != myrouterip)
+                	{
+
+                		if(routing_table[sender_neighbour].cost > routing_table[sender].cost + cost_received)
+                		{
+
+                			routing_table[sender_neighbour].cost=routing_table[sender].cost + cost_received ;
+                			routing_table[sender_neighbour].nxthop = routing_table[sender].nxthop;	
+
+                		}
+
+                	}
+                   
+
+                	received_vector.clear();
+                	
+                }
+
+                    auto itr = NeighbourCostList.begin();
+   				
+   				    while(itr != NeighbourCostList.end())
+    				
+    				{
+        				string temp=itr->first;
+        				int  tempc=itr->second;
+
+        				if(routing_table[temp].cost > tempc)
+        					routing_table[temp].cost=tempc;
+
+        				itr++;
+        			}      
+
+            }
 
 		}
 	}
