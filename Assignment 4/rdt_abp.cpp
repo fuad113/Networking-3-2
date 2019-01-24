@@ -120,8 +120,6 @@ void B_output(struct msg message)
 void A_input(struct pkt packet)
 {
 
-    stoptimer(0);
-
     printf("A packet with ACK %d has arrived in A\n",packet.acknum);
     printf("Expected ACK is %d\n",expACK_a);
     printf("A packet with checksum %d has arrived in A\n",packet.checksum);
@@ -129,21 +127,15 @@ void A_input(struct pkt packet)
 
     if(packet.checksum != CalculateChecksum(packet) || expACK_a!=packet.acknum)
     {
-        //A did not successfully send the last message to B
-        //retransmit the last message to B
-        printf("Resending the last packet again to B\n");
-
-        tolayer3(0,packet_a);
-
-        starttimer(0,50.00);
-
-        printf("Packet has been resent from A to B\n");
-
+        //B did not successfully returned the Acknowledgement
+        //retransmit the last message to B when timer interrupt will occur
+        printf("Checksum error or ACK error!!!\n");
+        return;
     }
     else
     {
-        //packet has been successfully sent to B
-
+        //ACK packet has been successfully sent to A
+        stoptimer(0);
         printf("Received The ACK of last packet successfully\n");
 
         expACK_a= !(expACK_a);

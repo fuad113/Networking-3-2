@@ -129,10 +129,13 @@ A packet with ACK 1 has arrived in A
 Expected ACK is 1
 A packet with checksum 1562 has arrived in A
 Expected checksum is 1610
-Resending the last packet again to B
+Checksum error or ACK error!!!
+
+EVENT time: 5796.330078,  type: 0, timerinterrupt   entity: 0
+Times up!!! Resending Packet from A to B
 Packet has been resent from A to B
 
-EVENT time: 5761.808105,  type: 2, fromlayer3  entity: 1
+EVENT time: 5798.250000,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 1 has arrived in B
 Expected seq. num is 0
 A packet with checksum 1940 has arrived in B
@@ -140,22 +143,25 @@ Expected checksum is 1940
           TOLAYER3: packet being corrupted
 B has sent NAK to A
 
-EVENT time: 5771.442871,  type: 2, fromlayer3  entity: 0
+EVENT time: 5807.884766,  type: 2, fromlayer3  entity: 0
 A packet with ACK 1 has arrived in A
 Expected ACK is 1
 A packet with checksum 1740 has arrived in A
 Expected checksum is 1001739
-Resending the last packet again to B
+Checksum error or ACK error!!!
+
+EVENT time: 5846.330078,  type: 0, timerinterrupt   entity: 0
+Times up!!! Resending Packet from A to B
 Packet has been resent from A to B
 
-EVENT time: 5777.524414,  type: 2, fromlayer3  entity: 1
+EVENT time: 5852.411621,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 1 has arrived in B
 Expected seq. num is 0
 A packet with checksum 1940 has arrived in B
 Expected checksum is 1940
 B has sent NAK to A
 
-EVENT time: 5782.076172,  type: 2, fromlayer3  entity: 0
+EVENT time: 5856.963379,  type: 2, fromlayer3  entity: 0
 A packet with ACK 1 has arrived in A
 Expected ACK is 1
 A packet with checksum 1740 has arrived in A
@@ -179,10 +185,13 @@ A packet with ACK 1 has arrived in A
 Expected ACK is 0
 A packet with checksum 1740 has arrived in A
 Expected checksum is 1740
-Resending the last packet again to B
+Checksum error or ACK error!!!
+
+EVENT time: 6281.452148,  type: 0, timerinterrupt   entity: 0
+Times up!!! Resending Packet from A to B
 Packet has been resent from A to B
 
-EVENT time: 6252.713379,  type: 2, fromlayer3  entity: 1
+EVENT time: 6289.305664,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 0 has arrived in B
 Expected seq. num is 0
 A packet with checksum 1976 has arrived in B
@@ -190,7 +199,7 @@ Expected checksum is 1976
 Msg has been sent to layer 5
 B has sent ACK to A
 
-EVENT time: 6255.239746,  type: 2, fromlayer3  entity: 0
+EVENT time: 6291.832031,  type: 2, fromlayer3  entity: 0
 A packet with ACK 0 has arrived in A
 Expected ACK is 0
 A packet with checksum 1560 has arrived in A
@@ -214,10 +223,13 @@ A packet with ACK 0 has arrived in A
 Expected ACK is 1
 A packet with checksum 1740 has arrived in A
 Expected checksum is 1740
-Resending the last packet again to B
+Checksum error or ACK error!!!
+
+EVENT time: 6578.275391,  type: 0, timerinterrupt   entity: 0
+Times up!!! Resending Packet from A to B
 Packet has been resent from A to B
 
-EVENT time: 6535.633301,  type: 2, fromlayer3  entity: 1
+EVENT time: 6582.471680,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 1 has arrived in B
 Expected seq. num is 1
 A packet with checksum 1997 has arrived in B
@@ -226,23 +238,23 @@ Msg has been sent to layer 5
           TOLAYER3: packet being lost
 B has sent ACK to A
 
-EVENT time: 6581.437012,  type: 0, timerinterrupt   entity: 0
+EVENT time: 6628.275391,  type: 0, timerinterrupt   entity: 0
 Times up!!! Resending Packet from A to B
           TOLAYER3: packet being lost
 Packet has been resent from A to B
 
-EVENT time: 6631.437012,  type: 0, timerinterrupt   entity: 0
+EVENT time: 6678.275391,  type: 0, timerinterrupt   entity: 0
 Times up!!! Resending Packet from A to B
 Packet has been resent from A to B
 
-EVENT time: 6632.980469,  type: 2, fromlayer3  entity: 1
+EVENT time: 6679.818848,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 1 has arrived in B
 Expected seq. num is 0
 A packet with checksum 1997 has arrived in B
 Expected checksum is 1997
 B has sent NAK to A
 
-EVENT time: 6636.769531,  type: 2, fromlayer3  entity: 0
+EVENT time: 6683.607910,  type: 2, fromlayer3  entity: 0
 A packet with ACK 1 has arrived in A
 Expected ACK is 1
 A packet with checksum 1740 has arrived in A
@@ -267,21 +279,24 @@ A packet with ACK 999999 has arrived in A
 Expected ACK is 0
 A packet with checksum 1560 has arrived in A
 Expected checksum is 1001559
-Resending the last packet again to B
+Checksum error or ACK error!!!
+
+EVENT time: 8472.437500,  type: 0, timerinterrupt   entity: 0
+Times up!!! Resending Packet from A to B
 Packet has been resent from A to B
 
-EVENT time: 8441.307617,  type: 2, fromlayer3  entity: 1
+EVENT time: 8480.644531,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 0 has arrived in B
 Expected seq. num is 1
 A packet with checksum 2014 has arrived in B
 Expected checksum is 2014
 B has sent NAK to A
 
-EVENT time: 8451.073242,  type: 2, fromlayer3  entity: 0
+EVENT time: 8490.410156,  type: 2, fromlayer3  entity: 0
 A packet with ACK 0 has arrived in A
 Expected ACK is 0
 A packet with checksum 1740 has arrived in A
 Expected checksum is 1740
 Received The ACK of last packet successfully
- Simulator terminated at time 8451.073242
+ Simulator terminated at time 8490.410156
  after sending 10 msgs from layer5
