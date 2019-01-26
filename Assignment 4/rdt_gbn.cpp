@@ -1,9 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <vector>
+#include <queue>
 
 #define messagesize 20
+#define windowsize 7
+#define buffersize 100
 
+
+using namespace std;
+
+float time = 0.000;
+float timeincreament=20.00;
 
 /* ******************************************************************
  ALTERNATING BIT AND GO-BACK-N NETWORK EMULATOR: SLIGHTLY MODIFIED
@@ -51,16 +60,21 @@ void tolayer5(int AorB, char datasent[20]);
 
 /********* STUDENTS WRITE THE NEXT SEVEN ROUTINES *********/
 
-struct pkt packet_a; //taking a global packet for A
-struct pkt packet_b; //taking a global packet for B
 
-bool flag_a; // flag is for telling A to make new packet
+struct pkt packet_a;
+struct pkt packet_b;
+struct pkt temp_packet;
 
-int expACK_a;
 
+vector<pkt> window;
+queue<pkt> buffer;
+queue<float> timetable;
+
+bool timerstatus;
+
+int sequencenum;
 int expseq_b;
-
-int sequence_num_a;
+int lastsuccessfullyreceived;
 
 char ack[messagesize];
 char nak[messagesize];
@@ -70,7 +84,7 @@ int CalculateChecksum(struct pkt p)
 {
     int sum=0;
 
-    for(int i=0;i<messagesize;i++)
+    for(int i=0; i<messagesize; i++)
     {
         sum+= (int) p.payload[i];
     }
@@ -84,28 +98,48 @@ int CalculateChecksum(struct pkt p)
 /* called from layer 5, passed the data to be sent to other side */
 void A_output(struct msg message)
 {
-  if(flag_a==false)
-  {
-     printf("Packet cannot be sent to Layer 3... Previous ACK not received\n");
-     return;
-  }
+    if(window.size()!=windowsize || buffer.size()!=buffersize)
+    {
+        packet_a.seqnum=sequencenum;
+        packet_a.acknum=sequencenum;
+        strncpy(packet_a.payload,message.data,messagesize);
+        packet_a.checksum=CalculateChecksum(packet_a);
 
-  else
-  {
-    printf("Received message from layer 5\n");
-    packet_a.seqnum=sequence_num_a;
-    packet_a.acknum=expACK_a;
-    strncpy(packet_a.payload,message.data,messagesize);
-    packet_a.checksum=CalculateChecksum(packet_a);
+        //update sequence number for next sequence number
+        sequencenum++;
+        sequencenum=(sequencenum % 8);
 
-    tolayer3(0,packet_a);
+        if(window.size() < windowsize)
+        {
+            window.push_back(packet_a);
+            tolayer3(0,packet_a);
 
-    starttimer(0,50.00);
+            if(timerstatus==false)
+            {
+                timerstatus=true;
+                starttimer(0,timeincreament);
+            }
 
-    printf("A packet is sent to Layer 3 with seq. num %d\n",packet_a.seqnum);
+            timetable.push(time);
 
-    flag_a=false; // this means a packet is transmitting. so no new message from layer 5 can be processed
-  }
+            printf("A new Packet had been added to window... No. of packets in window= %d\n",window.size());
+
+        }
+        else
+        {
+            printf("window is full..Packet is pushed into the buffer\n");
+            buffer.push(packet_a);
+        }
+
+
+    }
+
+    else if(window.size()==windowsize && buffer.size()==buffersize)
+    {
+        printf("Both window and buffer are full...dropping packet\n");
+
+    }
+
 
 }
 
@@ -120,36 +154,107 @@ void B_output(struct msg message)
 void A_input(struct pkt packet)
 {
 
-    stoptimer(0);
-
-    printf("A packet with ACK %d has arrived in A\n",packet.acknum);
-    printf("Expected ACK is %d\n",expACK_a);
-    printf("A packet with checksum %d has arrived in A\n",packet.checksum);
-    printf("Expected checksum is %d\n",CalculateChecksum(packet));
-
-    if(packet.checksum != CalculateChecksum(packet) || expACK_a!=packet.acknum)
+    //packet is not corrupted
+    if(packet.checksum == CalculateChecksum(packet))
     {
-        //A did not successfully send the last message to B
-        //retransmit the last message to B
-        printf("Resending the last packet again to B\n");
+        //checking acknum in the current window
+        int index=-1;
 
-        tolayer3(0,packet_a);
+        for(int i=0; i<window.size(); i++)
+        {
+            if(window[i].acknum==packet.acknum)
+            {
+                index=i;
+                break;
+            }
+        }
 
-        starttimer(0,50.00);
 
-        printf("Packet has been resent from A to B\n");
+        if(index != -1)
+        {
+            //case 1.1
+            stoptimer(0);
+            timerstatus=false;
+            //mark all the packets upon that index as received
+            //erase them from window
+
+            printf("No. of packets in the window = %d\n",window.size());
+            printf("Removing accepted packets from window\n");
+            window.erase(window.begin(),window.begin()+index+1);
+
+            //stop the time for those packets
+            for(int i=0; i<=index; i++)
+            {
+                timetable.pop();
+            }
+
+            printf("No. of packets in the window = %d\n",window.size());
+
+            //now push the packets in the buffer to window
+
+            while(buffer.size()!=0)
+            {
+                if(window.size()<windowsize)
+                {
+                    temp_packet=buffer.front();
+                    window.push_back(temp_packet);
+                    buffer.pop();
+
+                    tolayer3(0,temp_packet);
+
+                    timetable.push(time);
+                }
+                else
+                    break;
+            }
+
+
+            if(timetable.size()!=0)
+            {
+                float temp=max((float)0,timeincreament-time+timetable.front());
+                starttimer(0,temp);
+            }
+
+            return;
+
+        }
+
+        //duplicate ack checking
+        else if (index==-1)
+        {
+            printf("Duplicate ack found\n");
+
+            stoptimer(0);
+            timerstatus=false;
+
+            //send all the packets in the windows again
+
+            //clearing the previous timetable
+
+            while(!timetable.empty())
+            {
+                timetable.pop();
+            }
+
+            for(int i=0; i<window.size(); i++)
+            {
+                tolayer3(0,window[i]);
+                timetable.push(time);
+            }
+
+            starttimer(0,timeincreament);
+            timerstatus=true;
+            return;
+
+        }
 
     }
+
     else
     {
-        //packet has been successfully sent to B
-
-        printf("Received The ACK of last packet successfully\n");
-
-        expACK_a= !(expACK_a);
-        flag_a=true;
-        sequence_num_a= !(sequence_num_a);
-
+        //corrupted packet...drop
+        printf("Corrupted packet or checksum error...dropping\n");
+        return;
     }
 
 }
@@ -157,10 +262,33 @@ void A_input(struct pkt packet)
 /* called when A's timer goes off */
 void A_timerinterrupt(void)
 {
-    printf("Times up!!! Resending Packet from A to B\n");
-    tolayer3(0,packet_a);
-    starttimer(0,50.00);
-    printf("Packet has been resent from A to B\n");
+    printf("Times up!!!\n");
+    timerstatus=false;
+
+    //resent all the packets of the window
+
+    //clearing the previous timetable
+
+    while(!timetable.empty())
+    {
+        timetable.pop();
+    }
+
+
+    for(int i=0;i<window.size();i++)
+    {
+        tolayer3(0,window[i]);
+        timetable.push(time);
+    }
+
+
+    if(timetable.size()!=0)
+    {
+        starttimer(0,timeincreament);
+        timerstatus=true;
+    }
+
+
 
 }
 
@@ -168,9 +296,8 @@ void A_timerinterrupt(void)
 /* entity A routines are called. You can use it to do any initialization */
 void A_init(void)
 {
-    flag_a=true;
-    sequence_num_a=0;
-    expACK_a=0;
+    timerstatus=false;
+    sequencenum=0;
 }
 
 /* Note that with simplex transfer from a-to-B, there is no B_output() */
@@ -178,44 +305,65 @@ void A_init(void)
 /* called from layer 3, when a packet arrives for layer 4 at B*/
 void B_input(struct pkt packet)
 {
+    printf("A packet with seq. num %d has arrived in B\n",packet.seqnum);
+    printf("Expected seq. num is %d\n",expseq_b);
+    printf("A packet with checksum %d has arrived in B\n",packet.checksum);
+    printf("Expected checksum is %d\n",CalculateChecksum(packet));
 
-   printf("A packet with seq. num %d has arrived in B\n",packet.seqnum);
-   printf("Expected seq. num is %d\n",expseq_b);
-   printf("A packet with checksum %d has arrived in B\n",packet.checksum);
-   printf("Expected checksum is %d\n",CalculateChecksum(packet));
+    if(packet.checksum != CalculateChecksum(packet))
+    {
+        //not received the correct packet
+        //sending NAK to A
+        packet_b.acknum= lastsuccessfullyreceived;
+        packet_b.seqnum= expseq_b;
+        strncpy(packet_b.payload,nak,messagesize);
+        packet_b.checksum=CalculateChecksum(packet_b);
+
+        tolayer3(1,packet_b);
+
+        printf("B has sent NAK to A\n");
+    }
+    else
+    {
+        //correctly received the packet but not expected
+        if(packet.seqnum != expseq_b)
+        {
+            //sending NAK
+            packet_b.acknum= lastsuccessfullyreceived;
+            packet_b.seqnum= expseq_b;
+            strncpy(packet_b.payload,nak,messagesize);
+            packet_b.checksum=CalculateChecksum(packet_b);
+
+            tolayer3(1,packet_b);
+
+            printf("B has sent NAK to A\n");
+        }
+        else
+        {
+            //packet received correctly and expected
+            tolayer5(1,packet.payload);
+            printf("Msg has been sent to layer 5 from B\n");
+
+            //sending ack to A
+
+            packet_b.acknum= expseq_b;
+            packet_b.seqnum= expseq_b;
+            strncpy(packet_b.payload,ack,messagesize);
+            packet_b.checksum=CalculateChecksum(packet_b);
+
+            tolayer3(1,packet_b);
 
 
-   if(packet.checksum != CalculateChecksum(packet) || expseq_b != packet.seqnum)
-   {
-       //not received the correct packet
-       //sending NAK to A
-       packet_b.acknum= !(expseq_b);
-       packet_b.seqnum= expseq_b;
-       strncpy(packet_b.payload,nak,messagesize);
-       packet_b.checksum=CalculateChecksum(packet_b);
+            lastsuccessfullyreceived=packet.seqnum;
+            expseq_b++;
+            expseq_b=(expseq_b % 8);
 
-       tolayer3(1,packet_b);
+            printf("B has sent ACK to A\n");
 
-       printf("B has sent NAK to A\n");
-   }
-   else
-   {
-       //correctly received the packet
-       tolayer5(1,packet.payload);
-       printf("Msg has been sent to layer 5\n");
+        }
 
-       //sending ACK to A
-       packet_b.acknum= expseq_b;
-       packet_b.seqnum= expseq_b;
-       strncpy(packet_b.payload,ack,messagesize);
-       packet_b.checksum=CalculateChecksum(packet_b);
+    }
 
-       tolayer3(1,packet_b);
-
-       expseq_b= !(expseq_b);
-
-       printf("B has sent ACK to A\n");
-   }
 
 }
 
@@ -230,6 +378,7 @@ void B_timerinterrupt(void)
 void B_init(void)
 {
     expseq_b=0;
+    lastsuccessfullyreceived=-1;
     strncpy(ack,"****Acknowledged****",messagesize);
     strncpy(nak,"***NotAcknowledged**",messagesize);
 }
@@ -276,7 +425,6 @@ struct event *evlist = NULL; /* the event list */
 int TRACE = 1;     /* for my debugging */
 int nsim = 0;      /* number of messages from 5 to 4 so far */
 int nsimmax = 0;   /* number of msgs to generate, then stop */
-float time = 0.000;
 float lossprob;    /* probability that a packet is dropped  */
 float corruptprob; /* probability that one bit is packet is flipped */
 float lambda;      /* arrival rate of messages from layer 5 */
@@ -290,8 +438,8 @@ void insertevent(struct event *p);
 
 int main()
 {
-    freopen("input.txt","r",stdin);
-    freopen("gbn_output.txt","w",stdout);
+    freopen("gbn_input.txt","r",stdin);
+    freopen("output_gbn.doc","w",stdout);
 
     struct event *eventptr;
     struct msg msg2give;
@@ -439,25 +587,26 @@ float jimsrand(void)
 /*  The next set of routines handle the event list   */
 /*****************************************************/
 
-void generate_next_arrival(void) {
-  double x, log(), ceil();
-  struct event *evptr;
-  float ttime;
-  int tempint;
+void generate_next_arrival(void)
+{
+    double x, log(), ceil();
+    struct event *evptr;
+    float ttime;
+    int tempint;
 
-  if (TRACE > 2)
-    printf("          GENERATE NEXT ARRIVAL: creating new arrival\n");
+    if (TRACE > 2)
+        printf("          GENERATE NEXT ARRIVAL: creating new arrival\n");
 
-  x = lambda * jimsrand() * 2; /* x is uniform on [0,2*lambda] */
-  /* having mean of lambda        */
-  evptr = (struct event *) malloc(sizeof(struct event));
-  evptr->evtime = time + x;
-  evptr->evtype = FROM_LAYER5;
-  if (BIDIRECTIONAL && (jimsrand() > 0.5))
-    evptr->eventity = B;
-  else
-    evptr->eventity = A;
-  insertevent(evptr);
+    x = lambda * jimsrand() * 2; /* x is uniform on [0,2*lambda] */
+    /* having mean of lambda        */
+    evptr = (struct event *) malloc(sizeof(struct event));
+    evptr->evtime = time + x;
+    evptr->evtype = FROM_LAYER5;
+    if (BIDIRECTIONAL && (jimsrand() > 0.5))
+        evptr->eventity = B;
+    else
+        evptr->eventity = A;
+    insertevent(evptr);
 }
 
 void insertevent(struct event *p)

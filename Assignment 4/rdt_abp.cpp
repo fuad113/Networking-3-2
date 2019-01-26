@@ -92,7 +92,7 @@ void A_output(struct msg message)
 
   else
   {
-    printf("Received message from layer 5\n");
+    printf("Received message from layer 5 in A\n");
     packet_a.seqnum=sequence_num_a;
     packet_a.acknum=expACK_a;
     strncpy(packet_a.payload,message.data,messagesize);
@@ -100,7 +100,7 @@ void A_output(struct msg message)
 
     tolayer3(0,packet_a);
 
-    starttimer(0,50.00);
+    starttimer(0,20.00);
 
     printf("A packet is sent to Layer 3 with seq. num %d\n",packet_a.seqnum);
 
@@ -129,7 +129,7 @@ void A_input(struct pkt packet)
     {
         //B did not successfully returned the Acknowledgement
         //retransmit the last message to B when timer interrupt will occur
-        printf("Checksum error or ACK error!!!\n");
+        //printf("Checksum error or ACK error!!!\n");
         return;
     }
     else
@@ -151,7 +151,7 @@ void A_timerinterrupt(void)
 {
     printf("Times up!!! Resending Packet from A to B\n");
     tolayer3(0,packet_a);
-    starttimer(0,50.00);
+    starttimer(0,20.00);
     printf("Packet has been resent from A to B\n");
 
 }
@@ -194,7 +194,7 @@ void B_input(struct pkt packet)
    {
        //correctly received the packet
        tolayer5(1,packet.payload);
-       printf("Msg has been sent to layer 5\n");
+       printf("Msg has been sent to layer 5 in B\n");
 
        //sending ACK to A
        packet_b.acknum= expseq_b;
@@ -282,8 +282,8 @@ void insertevent(struct event *p);
 
 int main()
 {
-    freopen("input.txt","r",stdin);
-    freopen("abp_output.txt","w",stdout);
+    freopen("abp_input.txt","r",stdin);
+    freopen("output_abp.doc","w",stdout);
 
     struct event *eventptr;
     struct msg msg2give;
