@@ -10,7 +10,7 @@ Expected seq. num is 0
 A packet with checksum 1843 has arrived in B
 Expected checksum is 1843
 Msg has been sent to layer 5 from B
-B has sent ACK to A
+B has sent ACK to A for the packet having seq. num 0
 
 EVENT time: 8.927274,  type: 2, fromlayer3  entity: 0
 No. of packets in the window = 1
@@ -26,7 +26,7 @@ Expected seq. num is 1
 A packet with checksum 1864 has arrived in B
 Expected checksum is 1864
 Msg has been sent to layer 5 from B
-B has sent ACK to A
+B has sent ACK to A for the packet having seq. num 1
 
 EVENT time: 22.915127,  type: 2, fromlayer3  entity: 0
 No. of packets in the window = 1
@@ -42,7 +42,7 @@ Expected seq. num is 2
 A packet with checksum 1885 has arrived in B
 Expected checksum is 1885
 Msg has been sent to layer 5 from B
-B has sent ACK to A
+B has sent ACK to A for the packet having seq. num 2
 
 EVENT time: 29.601519,  type: 2, fromlayer3  entity: 0
 No. of packets in the window = 1
@@ -58,7 +58,7 @@ Expected seq. num is 3
 A packet with checksum 1906 has arrived in B
 Expected checksum is 1906
 Msg has been sent to layer 5 from B
-B has sent ACK to A
+B has sent ACK to A for the packet having seq. num 3
 
 EVENT time: 45.933743,  type: 2, fromlayer3  entity: 0
 No. of packets in the window = 1
@@ -75,7 +75,7 @@ A packet with checksum 1927 has arrived in B
 Expected checksum is 1927
 Msg has been sent to layer 5 from B
           TOLAYER3: packet being lost
-B has sent ACK to A
+B has sent ACK to A for the packet having seq. num 4
 
 EVENT time: 57.463299,  type: 1, fromlayer5  entity: 0
 A new Packet had been added to window... No. of packets in window= 2
@@ -87,7 +87,7 @@ A packet with checksum 1948 has arrived in B
 Expected checksum is 1948
 Msg has been sent to layer 5 from B
           TOLAYER3: packet being lost
-B has sent ACK to A
+B has sent ACK to A for the packet having seq. num 5
 
 EVENT time: 68.762474,  type: 1, fromlayer5  entity: 0
           TOLAYER3: packet being lost
@@ -103,7 +103,7 @@ Expected seq. num is 6
 A packet with checksum 1927 has arrived in B
 Expected checksum is 1927
           TOLAYER3: packet being corrupted
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 4
 
 EVENT time: 81.533249,  type: 1, fromlayer5  entity: 0
 A new Packet had been added to window... No. of packets in window= 4
@@ -113,7 +113,7 @@ A packet with seq. num 5 has arrived in B
 Expected seq. num is 6
 A packet with checksum 1948 has arrived in B
 Expected checksum is 1948
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 5
 
 EVENT time: 83.312355,  type: 2, fromlayer3  entity: 0
 Corrupted packet or checksum error...dropping
@@ -123,7 +123,7 @@ A packet with seq. num 7 has arrived in B
 Expected seq. num is 6
 A packet with checksum 1990 has arrived in B
 Expected checksum is 1990
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 7
 
 EVENT time: 89.393684,  type: 2, fromlayer3  entity: 0
 No. of packets in the window = 4
@@ -149,7 +149,7 @@ Expected seq. num is 6
 A packet with checksum 1990 has arrived in B
 Expected checksum is 1976
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 7
 
 EVENT time: 107.393349,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 0 has arrived in B
@@ -157,7 +157,7 @@ Expected seq. num is 6
 A packet with checksum 1995 has arrived in B
 Expected checksum is 1995
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 0
 
 EVENT time: 109.750664,  type: 1, fromlayer5  entity: 0
           TOLAYER3: packet being lost
@@ -169,7 +169,7 @@ Expected seq. num is 6
 A packet with checksum 1969 has arrived in B
 Expected checksum is 1969
 Msg has been sent to layer 5 from B
-B has sent ACK to A
+B has sent ACK to A for the packet having seq. num 6
 
 EVENT time: 113.945396,  type: 0, timerinterrupt   entity: 0
 Times up!!!
@@ -186,7 +186,7 @@ A packet with seq. num 0 has arrived in B
 Expected seq. num is 7
 A packet with checksum 1995 has arrived in B
 Expected checksum is 1980
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 0
 
 EVENT time: 120.891144,  type: 1, fromlayer5  entity: 0
 Warning: attempt to start a timer that is already started
@@ -197,7 +197,7 @@ A packet with seq. num 6 has arrived in B
 Expected seq. num is 7
 A packet with checksum 1969 has arrived in B
 Expected checksum is 1001962
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 6
 
 EVENT time: 122.302063,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -213,7 +213,7 @@ A packet with seq. num 0 has arrived in B
 Expected seq. num is 7
 A packet with checksum 1995 has arrived in B
 Expected checksum is 1995
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 0
 
 EVENT time: 125.270599,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -232,7 +232,7 @@ A packet with seq. num 1 has arrived in B
 Expected seq. num is 7
 A packet with checksum 2016 has arrived in B
 Expected checksum is 2016
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 1
 
 EVENT time: 134.127380,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -245,7 +245,7 @@ A packet with seq. num 2 has arrived in B
 Expected seq. num is 7
 A packet with checksum 2037 has arrived in B
 Expected checksum is 2037
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 2
 
 EVENT time: 140.739914,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -259,7 +259,7 @@ Expected seq. num is 7
 A packet with checksum 1990 has arrived in B
 Expected checksum is 1990
 Msg has been sent to layer 5 from B
-B has sent ACK to A
+B has sent ACK to A for the packet having seq. num 7
 
 EVENT time: 150.517914,  type: 1, fromlayer5  entity: 0
 A new Packet had been added to window... No. of packets in window= 7
@@ -270,7 +270,7 @@ Expected seq. num is 0
 A packet with checksum 1995 has arrived in B
 Expected checksum is 1980
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 0
 
 EVENT time: 152.989151,  type: 2, fromlayer3  entity: 0
 No. of packets in the window = 7
@@ -282,7 +282,7 @@ A packet with seq. num 1 has arrived in B
 Expected seq. num is 0
 A packet with checksum 2016 has arrived in B
 Expected checksum is 2016
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 1
 
 EVENT time: 160.739914,  type: 0, timerinterrupt   entity: 0
 Times up!!!
@@ -296,7 +296,7 @@ Expected seq. num is 0
 A packet with checksum 2037 has arrived in B
 Expected checksum is 2020
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 2
 
 EVENT time: 164.346985,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 3 has arrived in B
@@ -304,7 +304,7 @@ Expected seq. num is 0
 A packet with checksum 2058 has arrived in B
 Expected checksum is 2040
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 3
 
 EVENT time: 166.104630,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -321,14 +321,14 @@ A packet with seq. num 0 has arrived in B
 Expected seq. num is 0
 A packet with checksum 1995 has arrived in B
 Expected checksum is 1980
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 0
 
 EVENT time: 174.054947,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 1 has arrived in B
 Expected seq. num is 0
 A packet with checksum 2016 has arrived in B
 Expected checksum is 2016
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 1
 
 EVENT time: 176.036270,  type: 1, fromlayer5  entity: 0
 window is full..Packet is pushed into the buffer
@@ -338,7 +338,7 @@ A packet with seq. num 3 has arrived in B
 Expected seq. num is 0
 A packet with checksum 2058 has arrived in B
 Expected checksum is 2058
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 3
 
 EVENT time: 178.269714,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -351,7 +351,7 @@ Expected seq. num is 0
 A packet with checksum 1990 has arrived in B
 Expected checksum is 1990
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 7
 
 EVENT time: 180.853317,  type: 1, fromlayer5  entity: 0
 window is full..Packet is pushed into the buffer
@@ -365,7 +365,7 @@ Expected seq. num is 0
 A packet with checksum 1995 has arrived in B
 Expected checksum is 1995
 Msg has been sent to layer 5 from B
-B has sent ACK to A
+B has sent ACK to A for the packet having seq. num 0
 
 EVENT time: 184.964096,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -381,7 +381,7 @@ A packet with checksum 2016 has arrived in B
 Expected checksum is 2016
 Msg has been sent to layer 5 from B
           TOLAYER3: packet being lost
-B has sent ACK to A
+B has sent ACK to A for the packet having seq. num 1
 
 EVENT time: 187.815201,  type: 1, fromlayer5  entity: 0
 window is full..Packet is pushed into the buffer
@@ -406,7 +406,7 @@ A packet with checksum 2037 has arrived in B
 Expected checksum is 2037
 Msg has been sent to layer 5 from B
           TOLAYER3: packet being lost
-B has sent ACK to A
+B has sent ACK to A for the packet having seq. num 2
 
 EVENT time: 196.260544,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 3 has arrived in B
@@ -414,7 +414,7 @@ Expected seq. num is 3
 A packet with checksum 2058 has arrived in B
 Expected checksum is 2058
 Msg has been sent to layer 5 from B
-B has sent ACK to A
+B has sent ACK to A for the packet having seq. num 3
 
 EVENT time: 197.701935,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 4 has arrived in B
@@ -422,7 +422,7 @@ Expected seq. num is 4
 A packet with checksum 2079 has arrived in B
 Expected checksum is 2079
 Msg has been sent to layer 5 from B
-B has sent ACK to A
+B has sent ACK to A for the packet having seq. num 4
 
 EVENT time: 200.545288,  type: 2, fromlayer3  entity: 0
 No. of packets in the window = 7
@@ -435,7 +435,7 @@ A packet with seq. num 7 has arrived in B
 Expected seq. num is 5
 A packet with checksum 1990 has arrived in B
 Expected checksum is 1990
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 7
 
 EVENT time: 204.867386,  type: 2, fromlayer3  entity: 0
 No. of packets in the window = 7
@@ -455,7 +455,7 @@ Expected seq. num is 5
 A packet with checksum 1995 has arrived in B
 Expected checksum is 1995
           TOLAYER3: packet being corrupted
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 0
 
 EVENT time: 211.855118,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -471,7 +471,7 @@ A packet with seq. num 3 has arrived in B
 Expected seq. num is 5
 A packet with checksum 2058 has arrived in B
 Expected checksum is 2058
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 3
 
 EVENT time: 225.470749,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 4 has arrived in B
@@ -479,14 +479,14 @@ Expected seq. num is 5
 A packet with checksum 2079 has arrived in B
 Expected checksum is 2060
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 4
 
 EVENT time: 229.292953,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 0 has arrived in B
 Expected seq. num is 5
 A packet with checksum 1995 has arrived in B
 Expected checksum is 1995
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 0
 
 EVENT time: 230.445236,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -505,7 +505,7 @@ Expected seq. num is 5
 A packet with checksum 2016 has arrived in B
 Expected checksum is 2016
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 1
 
 EVENT time: 237.958847,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 2 has arrived in B
@@ -513,14 +513,14 @@ Expected seq. num is 5
 A packet with checksum 2037 has arrived in B
 Expected checksum is 2020
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 2
 
 EVENT time: 246.287231,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 3 has arrived in B
 Expected seq. num is 5
 A packet with checksum 2058 has arrived in B
 Expected checksum is 2040
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 3
 
 EVENT time: 250.254730,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -534,7 +534,7 @@ Expected seq. num is 5
 A packet with checksum 2079 has arrived in B
 Expected checksum is 2079
           TOLAYER3: packet being corrupted
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 4
 
 EVENT time: 253.950867,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 5 has arrived in B
@@ -543,7 +543,7 @@ A packet with checksum 2100 has arrived in B
 Expected checksum is 2100
 Msg has been sent to layer 5 from B
           TOLAYER3: packet being corrupted
-B has sent ACK to A
+B has sent ACK to A for the packet having seq. num 5
 
 EVENT time: 256.234436,  type: 2, fromlayer3  entity: 0
 Corrupted packet or checksum error...dropping
@@ -556,7 +556,7 @@ A packet with seq. num 2 has arrived in B
 Expected seq. num is 6
 A packet with checksum 2037 has arrived in B
 Expected checksum is 2037
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 2
 
 EVENT time: 264.413635,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 4 has arrived in B
@@ -564,14 +564,14 @@ Expected seq. num is 6
 A packet with checksum 2079 has arrived in B
 Expected checksum is 2079
           TOLAYER3: packet being corrupted
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 4
 
 EVENT time: 266.786407,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 5 has arrived in B
 Expected seq. num is 6
 A packet with checksum 2100 has arrived in B
 Expected checksum is 2100
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 5
 
 EVENT time: 267.129517,  type: 2, fromlayer3  entity: 0
 No. of packets in the window = 7
@@ -584,7 +584,7 @@ Expected seq. num is 6
 A packet with checksum 1995 has arrived in B
 Expected checksum is 1995
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 0
 
 EVENT time: 270.254730,  type: 0, timerinterrupt   entity: 0
 Times up!!!
@@ -601,7 +601,7 @@ Expected seq. num is 6
 A packet with checksum 2016 has arrived in B
 Expected checksum is 2000
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 1
 
 EVENT time: 280.924805,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -614,7 +614,7 @@ A packet with seq. num 2 has arrived in B
 Expected seq. num is 6
 A packet with checksum 2037 has arrived in B
 Expected checksum is 2020
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 2
 
 EVENT time: 288.920135,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 3 has arrived in B
@@ -622,7 +622,7 @@ Expected seq. num is 6
 A packet with checksum 2058 has arrived in B
 Expected checksum is 2040
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 3
 
 EVENT time: 290.004242,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -634,14 +634,14 @@ A packet with seq. num 4 has arrived in B
 Expected seq. num is 6
 A packet with checksum 2079 has arrived in B
 Expected checksum is 2079
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 4
 
 EVENT time: 293.989532,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 5 has arrived in B
 Expected seq. num is 6
 A packet with checksum 2100 has arrived in B
 Expected checksum is 2100
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 5
 
 EVENT time: 296.052551,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -660,7 +660,7 @@ A packet with seq. num 0 has arrived in B
 Expected seq. num is 6
 A packet with checksum 1995 has arrived in B
 Expected checksum is 1995
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 0
 
 EVENT time: 301.729492,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -673,7 +673,7 @@ A packet with seq. num 1 has arrived in B
 Expected seq. num is 6
 A packet with checksum 2016 has arrived in B
 Expected checksum is 2016
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 1
 
 EVENT time: 310.615723,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -684,7 +684,7 @@ A packet with seq. num 2 has arrived in B
 Expected seq. num is 6
 A packet with checksum 2037 has arrived in B
 Expected checksum is 2020
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 2
 
 EVENT time: 314.835632,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -697,7 +697,7 @@ A packet with seq. num 3 has arrived in B
 Expected seq. num is 6
 A packet with checksum 2058 has arrived in B
 Expected checksum is 2040
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 3
 
 EVENT time: 319.315674,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 4 has arrived in B
@@ -705,7 +705,7 @@ Expected seq. num is 6
 A packet with checksum 2079 has arrived in B
 Expected checksum is 2079
           TOLAYER3: packet being corrupted
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 4
 
 EVENT time: 321.111145,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -722,7 +722,7 @@ Expected seq. num is 6
 A packet with checksum 2100 has arrived in B
 Expected checksum is 2100
           TOLAYER3: packet being corrupted
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 5
 
 EVENT time: 330.626068,  type: 2, fromlayer3  entity: 0
 Corrupted packet or checksum error...dropping
@@ -733,14 +733,14 @@ Expected seq. num is 6
 A packet with checksum 2121 has arrived in B
 Expected checksum is 2121
 Msg has been sent to layer 5 from B
-B has sent ACK to A
+B has sent ACK to A for the packet having seq. num 6
 
 EVENT time: 337.543732,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 999999 has arrived in B
 Expected seq. num is 7
 A packet with checksum 2016 has arrived in B
 Expected checksum is 1002014
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 999999
 
 EVENT time: 341.111145,  type: 0, timerinterrupt   entity: 0
 Times up!!!
@@ -757,7 +757,7 @@ A packet with seq. num 2 has arrived in B
 Expected seq. num is 7
 A packet with checksum 2037 has arrived in B
 Expected checksum is 1002034
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 2
 
 EVENT time: 348.469299,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 3 has arrived in B
@@ -765,7 +765,7 @@ Expected seq. num is 7
 A packet with checksum 2058 has arrived in B
 Expected checksum is 2058
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 3
 
 EVENT time: 350.734009,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -777,7 +777,7 @@ A packet with seq. num 5 has arrived in B
 Expected seq. num is 7
 A packet with checksum 2100 has arrived in B
 Expected checksum is 2100
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 5
 
 EVENT time: 354.660858,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -792,7 +792,7 @@ A packet with seq. num 6 has arrived in B
 Expected seq. num is 7
 A packet with checksum 2121 has arrived in B
 Expected checksum is 2121
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 6
 
 EVENT time: 366.973663,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -805,7 +805,7 @@ Expected seq. num is 7
 A packet with checksum 1995 has arrived in B
 Expected checksum is 1995
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 0
 
 EVENT time: 377.092316,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 1 has arrived in B
@@ -813,14 +813,14 @@ Expected seq. num is 7
 A packet with checksum 2016 has arrived in B
 Expected checksum is 2016
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 1
 
 EVENT time: 384.408539,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 2 has arrived in B
 Expected seq. num is 7
 A packet with checksum 2037 has arrived in B
 Expected checksum is 2037
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 2
 
 EVENT time: 386.973663,  type: 0, timerinterrupt   entity: 0
 Times up!!!
@@ -837,7 +837,7 @@ A packet with seq. num 3 has arrived in B
 Expected seq. num is 7
 A packet with checksum 2058 has arrived in B
 Expected checksum is 2058
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 3
 
 EVENT time: 392.114746,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 4 has arrived in B
@@ -845,7 +845,7 @@ Expected seq. num is 7
 A packet with checksum 2079 has arrived in B
 Expected checksum is 2079
           TOLAYER3: packet being corrupted
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 4
 
 EVENT time: 398.807556,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -858,7 +858,7 @@ A packet with seq. num 5 has arrived in B
 Expected seq. num is 7
 A packet with checksum 2100 has arrived in B
 Expected checksum is 2100
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 5
 
 EVENT time: 401.448975,  type: 2, fromlayer3  entity: 0
 Corrupted packet or checksum error...dropping
@@ -869,7 +869,7 @@ Expected seq. num is 7
 A packet with checksum 2147 has arrived in B
 Expected checksum is 2147
           TOLAYER3: packet being corrupted
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 0
 
 EVENT time: 408.708069,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -879,7 +879,7 @@ A packet with seq. num 1 has arrived in B
 Expected seq. num is 7
 A packet with checksum 2168 has arrived in B
 Expected checksum is 2144
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 1
 
 EVENT time: 414.257111,  type: 2, fromlayer3  entity: 0
 Corrupted packet or checksum error...dropping
@@ -889,7 +889,7 @@ A packet with seq. num 2 has arrived in B
 Expected seq. num is 7
 A packet with checksum 2189 has arrived in B
 Expected checksum is 2189
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 2
 
 EVENT time: 416.130280,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -907,7 +907,7 @@ A packet with seq. num 3 has arrived in B
 Expected seq. num is 7
 A packet with checksum 2210 has arrived in B
 Expected checksum is 2210
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 3
 
 EVENT time: 423.330231,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -919,7 +919,7 @@ A packet with seq. num 5 has arrived in B
 Expected seq. num is 7
 A packet with checksum 2100 has arrived in B
 Expected checksum is 2100
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 5
 
 EVENT time: 439.065002,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -932,7 +932,7 @@ A packet with seq. num 6 has arrived in B
 Expected seq. num is 7
 A packet with checksum 2121 has arrived in B
 Expected checksum is 2121
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 6
 
 EVENT time: 443.865295,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 7 has arrived in B
@@ -940,7 +940,7 @@ Expected seq. num is 7
 A packet with checksum 2142 has arrived in B
 Expected checksum is 2142
 Msg has been sent to layer 5 from B
-B has sent ACK to A
+B has sent ACK to A for the packet having seq. num 7
 
 EVENT time: 445.794830,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -950,7 +950,7 @@ A packet with seq. num 2 has arrived in B
 Expected seq. num is 0
 A packet with checksum 2189 has arrived in B
 Expected checksum is 1002186
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 2
 
 EVENT time: 450.076813,  type: 2, fromlayer3  entity: 0
 No. of packets in the window = 5
@@ -963,7 +963,7 @@ Expected seq. num is 0
 A packet with checksum 2100 has arrived in B
 Expected checksum is 2100
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 5
 
 EVENT time: 454.920135,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 6 has arrived in B
@@ -971,7 +971,7 @@ Expected seq. num is 0
 A packet with checksum 2121 has arrived in B
 Expected checksum is 2121
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 6
 
 EVENT time: 456.584991,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -984,7 +984,7 @@ Expected seq. num is 0
 A packet with checksum 2147 has arrived in B
 Expected checksum is 2147
 Msg has been sent to layer 5 from B
-B has sent ACK to A
+B has sent ACK to A for the packet having seq. num 0
 
 EVENT time: 464.263367,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 2 has arrived in B
@@ -992,7 +992,7 @@ Expected seq. num is 1
 A packet with checksum 2189 has arrived in B
 Expected checksum is 2189
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 2
 
 EVENT time: 467.437134,  type: 2, fromlayer3  entity: 0
 No. of packets in the window = 4
@@ -1004,7 +1004,7 @@ A packet with seq. num 5 has arrived in B
 Expected seq. num is 1
 A packet with checksum 2100 has arrived in B
 Expected checksum is 2100
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 5
 
 EVENT time: 471.894318,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 6 has arrived in B
@@ -1012,7 +1012,7 @@ Expected seq. num is 1
 A packet with checksum 2121 has arrived in B
 Expected checksum is 2121
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 6
 
 EVENT time: 476.303528,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1022,7 +1022,7 @@ A packet with seq. num 7 has arrived in B
 Expected seq. num is 1
 A packet with checksum 2142 has arrived in B
 Expected checksum is 1002134
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 7
 
 EVENT time: 484.181671,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 0 has arrived in B
@@ -1030,7 +1030,7 @@ Expected seq. num is 1
 A packet with checksum 2147 has arrived in B
 Expected checksum is 2147
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 0
 
 EVENT time: 489.803284,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1041,7 +1041,7 @@ A packet with seq. num 1 has arrived in B
 Expected seq. num is 1
 A packet with checksum 2168 has arrived in B
 Expected checksum is 2144
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 1
 
 EVENT time: 500.854614,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1052,14 +1052,14 @@ A packet with seq. num 3 has arrived in B
 Expected seq. num is 1
 A packet with checksum 2210 has arrived in B
 Expected checksum is 2210
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 3
 
 EVENT time: 505.992493,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 6 has arrived in B
 Expected seq. num is 1
 A packet with checksum 2121 has arrived in B
 Expected checksum is 2121
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 6
 
 EVENT time: 509.367310,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1071,7 +1071,7 @@ A packet with seq. num 7 has arrived in B
 Expected seq. num is 1
 A packet with checksum 2142 has arrived in B
 Expected checksum is 2142
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 7
 
 EVENT time: 514.092590,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 1 has arrived in B
@@ -1080,7 +1080,7 @@ A packet with checksum 2168 has arrived in B
 Expected checksum is 2168
 Msg has been sent to layer 5 from B
           TOLAYER3: packet being corrupted
-B has sent ACK to A
+B has sent ACK to A for the packet having seq. num 1
 
 EVENT time: 516.382507,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1093,7 +1093,7 @@ A packet with checksum 2189 has arrived in B
 Expected checksum is 2189
 Msg has been sent to layer 5 from B
           TOLAYER3: packet being lost
-B has sent ACK to A
+B has sent ACK to A for the packet having seq. num 2
 
 EVENT time: 523.975891,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1104,7 +1104,7 @@ Expected seq. num is 3
 A packet with checksum 2210 has arrived in B
 Expected checksum is 2210
 Msg has been sent to layer 5 from B
-B has sent ACK to A
+B has sent ACK to A for the packet having seq. num 3
 
 EVENT time: 530.031128,  type: 2, fromlayer3  entity: 0
 Corrupted packet or checksum error...dropping
@@ -1119,14 +1119,14 @@ A packet with seq. num 6 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2121 has arrived in B
 Expected checksum is 2100
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 6
 
 EVENT time: 538.584900,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 0 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2147 has arrived in B
 Expected checksum is 2147
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 0
 
 EVENT time: 540.988159,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 1 has arrived in B
@@ -1134,7 +1134,7 @@ Expected seq. num is 4
 A packet with checksum 2168 has arrived in B
 Expected checksum is 2168
           TOLAYER3: packet being corrupted
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 1
 
 EVENT time: 543.510620,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 2 has arrived in B
@@ -1142,7 +1142,7 @@ Expected seq. num is 4
 A packet with checksum 2189 has arrived in B
 Expected checksum is 2189
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 2
 
 EVENT time: 545.250244,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1153,14 +1153,14 @@ A packet with seq. num 3 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2210 has arrived in B
 Expected checksum is 2210
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 3
 
 EVENT time: 550.347473,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 6 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2121 has arrived in B
 Expected checksum is 2121
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 6
 
 EVENT time: 551.222534,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1170,7 +1170,7 @@ A packet with seq. num 0 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2147 has arrived in B
 Expected checksum is 2147
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 0
 
 EVENT time: 558.807922,  type: 2, fromlayer3  entity: 0
 Corrupted packet or checksum error...dropping
@@ -1180,7 +1180,7 @@ A packet with seq. num 2 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2189 has arrived in B
 Expected checksum is 2189
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 2
 
 EVENT time: 565.549561,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1191,14 +1191,14 @@ Expected seq. num is 4
 A packet with checksum 2210 has arrived in B
 Expected checksum is 2184
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 3
 
 EVENT time: 573.056091,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 6 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2121 has arrived in B
 Expected checksum is 2100
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 6
 
 EVENT time: 573.744751,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1212,7 +1212,7 @@ Expected seq. num is 4
 A packet with checksum 2142 has arrived in B
 Expected checksum is 2142
           TOLAYER3: packet being corrupted
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 7
 
 EVENT time: 582.702271,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 0 has arrived in B
@@ -1220,7 +1220,7 @@ Expected seq. num is 4
 A packet with checksum 2147 has arrived in B
 Expected checksum is 2147
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 0
 
 EVENT time: 585.308411,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1231,7 +1231,7 @@ Expected seq. num is 4
 A packet with checksum 2168 has arrived in B
 Expected checksum is 2168
           TOLAYER3: packet being corrupted
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 1
 
 EVENT time: 594.854370,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1241,7 +1241,7 @@ A packet with seq. num 2 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2189 has arrived in B
 Expected checksum is 2164
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 2
 
 EVENT time: 601.043945,  type: 2, fromlayer3  entity: 0
 Corrupted packet or checksum error...dropping
@@ -1251,14 +1251,14 @@ A packet with seq. num 3 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2210 has arrived in B
 Expected checksum is 2184
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 3
 
 EVENT time: 607.320923,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 0 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2147 has arrived in B
 Expected checksum is 2147
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 0
 
 EVENT time: 608.253906,  type: 2, fromlayer3  entity: 0
 Corrupted packet or checksum error...dropping
@@ -1268,7 +1268,7 @@ A packet with seq. num 1 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2168 has arrived in B
 Expected checksum is 2168
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 1
 
 EVENT time: 614.854370,  type: 0, timerinterrupt   entity: 0
 Times up!!!
@@ -1283,7 +1283,7 @@ Expected seq. num is 4
 A packet with checksum 2189 has arrived in B
 Expected checksum is 2189
           TOLAYER3: packet being corrupted
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 2
 
 EVENT time: 619.876038,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 3 has arrived in B
@@ -1291,14 +1291,14 @@ Expected seq. num is 4
 A packet with checksum 2210 has arrived in B
 Expected checksum is 2210
           TOLAYER3: packet being corrupted
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 3
 
 EVENT time: 623.677917,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 6 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2121 has arrived in B
 Expected checksum is 2121
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 6
 
 EVENT time: 624.020203,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1312,7 +1312,7 @@ Expected seq. num is 4
 A packet with checksum 2147 has arrived in B
 Expected checksum is 2147
           TOLAYER3: packet being corrupted
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 0
 
 EVENT time: 633.109375,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1323,7 +1323,7 @@ Expected seq. num is 4
 A packet with checksum 2189 has arrived in B
 Expected checksum is 2189
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 2
 
 EVENT time: 642.829773,  type: 2, fromlayer3  entity: 0
 Corrupted packet or checksum error...dropping
@@ -1336,7 +1336,7 @@ A packet with seq. num 3 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2210 has arrived in B
 Expected checksum is 2210
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 3
 
 EVENT time: 649.221741,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1350,14 +1350,14 @@ Expected seq. num is 4
 A packet with checksum 2121 has arrived in B
 Expected checksum is 2121
           TOLAYER3: packet being corrupted
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 6
 
 EVENT time: 651.572510,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 7 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2142 has arrived in B
 Expected checksum is 2120
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 7
 
 EVENT time: 652.520935,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1367,7 +1367,7 @@ A packet with seq. num 1 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2168 has arrived in B
 Expected checksum is 2168
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 1
 
 EVENT time: 655.896790,  type: 2, fromlayer3  entity: 0
 Corrupted packet or checksum error...dropping
@@ -1377,7 +1377,7 @@ A packet with seq. num 2 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2189 has arrived in B
 Expected checksum is 2164
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 2
 
 EVENT time: 658.173462,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1387,7 +1387,7 @@ A packet with seq. num 3 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2210 has arrived in B
 Expected checksum is 2184
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 3
 
 EVENT time: 662.928955,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1398,7 +1398,7 @@ Expected seq. num is 4
 A packet with checksum 2121 has arrived in B
 Expected checksum is 2121
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 6
 
 EVENT time: 664.302795,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1411,14 +1411,14 @@ A packet with seq. num 7 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2142 has arrived in B
 Expected checksum is 2142
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 7
 
 EVENT time: 668.158691,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 0 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2147 has arrived in B
 Expected checksum is 2124
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 0
 
 EVENT time: 670.186523,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1429,7 +1429,7 @@ Expected seq. num is 4
 A packet with checksum 2189 has arrived in B
 Expected checksum is 2164
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 2
 
 EVENT time: 675.565247,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1440,21 +1440,21 @@ Expected seq. num is 4
 A packet with checksum 2210 has arrived in B
 Expected checksum is 2210
           TOLAYER3: packet being corrupted
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 3
 
 EVENT time: 677.792969,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 6 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2121 has arrived in B
 Expected checksum is 2121
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 6
 
 EVENT time: 684.505493,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 0 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2147 has arrived in B
 Expected checksum is 2147
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 0
 
 EVENT time: 686.270813,  type: 2, fromlayer3  entity: 0
 Corrupted packet or checksum error...dropping
@@ -1464,14 +1464,14 @@ A packet with seq. num 1 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2168 has arrived in B
 Expected checksum is 2168
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 1
 
 EVENT time: 690.281067,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 2 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2189 has arrived in B
 Expected checksum is 2189
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 2
 
 EVENT time: 692.440308,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1484,7 +1484,7 @@ A packet with seq. num 3 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2210 has arrived in B
 Expected checksum is 2210
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 3
 
 EVENT time: 699.627625,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1501,7 +1501,7 @@ Expected seq. num is 4
 A packet with checksum 2121 has arrived in B
 Expected checksum is 1002114
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 999999
 
 EVENT time: 713.221863,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 999999 has arrived in B
@@ -1509,14 +1509,14 @@ Expected seq. num is 4
 A packet with checksum 2142 has arrived in B
 Expected checksum is 1002134
           TOLAYER3: packet being corrupted
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 999999
 
 EVENT time: 718.852722,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 0 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2147 has arrived in B
 Expected checksum is 2147
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 0
 
 EVENT time: 720.758118,  type: 2, fromlayer3  entity: 0
 Corrupted packet or checksum error...dropping
@@ -1526,7 +1526,7 @@ A packet with seq. num 2 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2189 has arrived in B
 Expected checksum is 2189
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 2
 
 EVENT time: 728.335510,  type: 0, timerinterrupt   entity: 0
 Times up!!!
@@ -1543,7 +1543,7 @@ A packet with seq. num 3 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2210 has arrived in B
 Expected checksum is 2210
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 3
 
 EVENT time: 739.188293,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1554,7 +1554,7 @@ Expected seq. num is 4
 A packet with checksum 2121 has arrived in B
 Expected checksum is 2121
           TOLAYER3: packet being corrupted
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 6
 
 EVENT time: 753.727661,  type: 2, fromlayer3  entity: 0
 Corrupted packet or checksum error...dropping
@@ -1564,7 +1564,7 @@ A packet with seq. num 7 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2142 has arrived in B
 Expected checksum is 2142
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 7
 
 EVENT time: 758.429626,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1574,14 +1574,14 @@ A packet with seq. num 2 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2189 has arrived in B
 Expected checksum is 2164
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 2
 
 EVENT time: 768.638611,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 3 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2210 has arrived in B
 Expected checksum is 2210
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 3
 
 EVENT time: 770.779602,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 6 has arrived in B
@@ -1589,7 +1589,7 @@ Expected seq. num is 4
 A packet with checksum 2121 has arrived in B
 Expected checksum is 2121
           TOLAYER3: packet being corrupted
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 6
 
 EVENT time: 772.725098,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1606,21 +1606,21 @@ Expected seq. num is 4
 A packet with checksum 2142 has arrived in B
 Expected checksum is 2142
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 7
 
 EVENT time: 785.455750,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 0 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2147 has arrived in B
 Expected checksum is 2124
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 0
 
 EVENT time: 790.213196,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 2 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2189 has arrived in B
 Expected checksum is 2189
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 2
 
 EVENT time: 791.378052,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1634,7 +1634,7 @@ Expected seq. num is 4
 A packet with checksum 2210 has arrived in B
 Expected checksum is 2210
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 3
 
 EVENT time: 801.747681,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 7 has arrived in B
@@ -1642,21 +1642,21 @@ Expected seq. num is 4
 A packet with checksum 2142 has arrived in B
 Expected checksum is 2142
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 7
 
 EVENT time: 809.026855,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 0 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2147 has arrived in B
 Expected checksum is 2147
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 0
 
 EVENT time: 812.041809,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 2 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2189 has arrived in B
 Expected checksum is 2164
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 2
 
 EVENT time: 814.294373,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1669,7 +1669,7 @@ A packet with seq. num 3 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2210 has arrived in B
 Expected checksum is 2210
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 3
 
 EVENT time: 826.009277,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 7 has arrived in B
@@ -1677,7 +1677,7 @@ Expected seq. num is 4
 A packet with checksum 2142 has arrived in B
 Expected checksum is 2142
           TOLAYER3: packet being corrupted
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 7
 
 EVENT time: 827.817139,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1687,7 +1687,7 @@ A packet with seq. num 0 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2147 has arrived in B
 Expected checksum is 2147
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 0
 
 EVENT time: 835.971680,  type: 2, fromlayer3  entity: 0
 Corrupted packet or checksum error...dropping
@@ -1698,14 +1698,14 @@ Expected seq. num is 4
 A packet with checksum 2168 has arrived in B
 Expected checksum is 2168
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 1
 
 EVENT time: 838.918152,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 2 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2189 has arrived in B
 Expected checksum is 2189
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 2
 
 EVENT time: 845.021057,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1716,7 +1716,7 @@ Expected seq. num is 4
 A packet with checksum 2210 has arrived in B
 Expected checksum is 2210
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 3
 
 EVENT time: 852.496460,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 7 has arrived in B
@@ -1724,7 +1724,7 @@ Expected seq. num is 4
 A packet with checksum 2142 has arrived in B
 Expected checksum is 2120
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 7
 
 EVENT time: 853.575745,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1734,21 +1734,21 @@ A packet with seq. num 0 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2147 has arrived in B
 Expected checksum is 2147
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 0
 
 EVENT time: 861.664429,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 1 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2168 has arrived in B
 Expected checksum is 2168
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 1
 
 EVENT time: 866.873169,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 2 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2189 has arrived in B
 Expected checksum is 2164
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 2
 
 EVENT time: 867.726074,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1758,7 +1758,7 @@ A packet with seq. num 3 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2210 has arrived in B
 Expected checksum is 2210
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 3
 
 EVENT time: 872.300049,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1768,7 +1768,7 @@ A packet with seq. num 7 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2142 has arrived in B
 Expected checksum is 2120
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 7
 
 EVENT time: 875.386963,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1778,7 +1778,7 @@ A packet with seq. num 0 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2147 has arrived in B
 Expected checksum is 2147
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 0
 
 EVENT time: 877.398560,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1788,14 +1788,14 @@ A packet with seq. num 1 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2168 has arrived in B
 Expected checksum is 2168
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 1
 
 EVENT time: 885.133484,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 2 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2189 has arrived in B
 Expected checksum is 2189
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 2
 
 EVENT time: 887.078003,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1809,7 +1809,7 @@ Expected seq. num is 4
 A packet with checksum 2142 has arrived in B
 Expected checksum is 2120
           TOLAYER3: packet being corrupted
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 7
 
 EVENT time: 890.458801,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1825,7 +1825,7 @@ A packet with seq. num 1 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2168 has arrived in B
 Expected checksum is 2168
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 1
 
 EVENT time: 906.188660,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1836,21 +1836,21 @@ Expected seq. num is 4
 A packet with checksum 2189 has arrived in B
 Expected checksum is 2189
           TOLAYER3: packet being corrupted
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 2
 
 EVENT time: 909.873779,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 3 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2210 has arrived in B
 Expected checksum is 2210
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 3
 
 EVENT time: 914.445251,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 7 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2142 has arrived in B
 Expected checksum is 2142
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 7
 
 EVENT time: 914.461243,  type: 2, fromlayer3  entity: 0
 Corrupted packet or checksum error...dropping
@@ -1863,14 +1863,14 @@ A packet with seq. num 0 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2147 has arrived in B
 Expected checksum is 2147
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 0
 
 EVENT time: 923.915039,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 3 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2210 has arrived in B
 Expected checksum is 2210
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 3
 
 EVENT time: 926.393738,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1880,7 +1880,7 @@ A packet with seq. num 0 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2147 has arrived in B
 Expected checksum is 2147
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 0
 
 EVENT time: 930.853149,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1890,14 +1890,14 @@ A packet with seq. num 1 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2168 has arrived in B
 Expected checksum is 2168
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 1
 
 EVENT time: 934.086304,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 7 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2142 has arrived in B
 Expected checksum is 2142
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 7
 
 EVENT time: 936.179749,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 0 has arrived in B
@@ -1905,7 +1905,7 @@ Expected seq. num is 4
 A packet with checksum 2147 has arrived in B
 Expected checksum is 2147
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 0
 
 EVENT time: 940.735291,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1915,7 +1915,7 @@ A packet with seq. num 1 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2168 has arrived in B
 Expected checksum is 2168
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 1
 
 EVENT time: 943.750793,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1925,7 +1925,7 @@ A packet with seq. num 2 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2189 has arrived in B
 Expected checksum is 2189
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 2
 
 EVENT time: 944.750793,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1941,7 +1941,7 @@ A packet with seq. num 3 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2210 has arrived in B
 Expected checksum is 2210
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 3
 
 EVENT time: 954.293518,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 7 has arrived in B
@@ -1949,7 +1949,7 @@ Expected seq. num is 4
 A packet with checksum 2142 has arrived in B
 Expected checksum is 1002134
           TOLAYER3: packet being corrupted
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 7
 
 EVENT time: 957.605408,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 3 has arrived in B
@@ -1957,7 +1957,7 @@ Expected seq. num is 4
 A packet with checksum 2210 has arrived in B
 Expected checksum is 2210
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 3
 
 EVENT time: 958.399902,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1967,7 +1967,7 @@ A packet with seq. num 7 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2142 has arrived in B
 Expected checksum is 2142
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 7
 
 EVENT time: 963.438599,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -1977,7 +1977,7 @@ A packet with seq. num 0 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2147 has arrived in B
 Expected checksum is 2124
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 0
 
 EVENT time: 971.963379,  type: 2, fromlayer3  entity: 0
 Corrupted packet or checksum error...dropping
@@ -1987,7 +1987,7 @@ A packet with seq. num 1 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2168 has arrived in B
 Expected checksum is 2168
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 1
 
 EVENT time: 975.826843,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 2 has arrived in B
@@ -1995,7 +1995,7 @@ Expected seq. num is 4
 A packet with checksum 2189 has arrived in B
 Expected checksum is 2189
           TOLAYER3: packet being corrupted
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 2
 
 EVENT time: 980.598267,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -2009,14 +2009,14 @@ Expected seq. num is 4
 A packet with checksum 2210 has arrived in B
 Expected checksum is 2210
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 3
 
 EVENT time: 991.550781,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 7 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2142 has arrived in B
 Expected checksum is 2142
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 7
 
 EVENT time: 994.002686,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -2026,7 +2026,7 @@ A packet with seq. num 0 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2147 has arrived in B
 Expected checksum is 2124
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 0
 
 EVENT time: 998.033386,  type: 2, fromlayer3  entity: 0
 Corrupted packet or checksum error...dropping
@@ -2040,14 +2040,14 @@ Expected seq. num is 4
 A packet with checksum 2168 has arrived in B
 Expected checksum is 2168
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 1
 
 EVENT time: 1005.614685,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 2 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2189 has arrived in B
 Expected checksum is 2164
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 2
 
 EVENT time: 1009.671936,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -2057,14 +2057,14 @@ A packet with seq. num 3 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2210 has arrived in B
 Expected checksum is 2210
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 3
 
 EVENT time: 1015.998352,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 999999 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2168 has arrived in B
 Expected checksum is 1002166
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 999999
 
 EVENT time: 1019.112976,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -2074,7 +2074,7 @@ A packet with seq. num 2 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2189 has arrived in B
 Expected checksum is 2189
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 2
 
 EVENT time: 1023.163147,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -2084,14 +2084,14 @@ A packet with seq. num 3 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2210 has arrived in B
 Expected checksum is 2210
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 3
 
 EVENT time: 1026.406372,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 7 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2142 has arrived in B
 Expected checksum is 2142
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 7
 
 EVENT time: 1031.338257,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -2102,14 +2102,14 @@ Expected seq. num is 4
 A packet with checksum 2147 has arrived in B
 Expected checksum is 2147
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 0
 
 EVENT time: 1037.335571,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 1 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2168 has arrived in B
 Expected checksum is 2168
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 1
 
 EVENT time: 1040.548096,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -2119,7 +2119,7 @@ A packet with seq. num 2 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2189 has arrived in B
 Expected checksum is 2189
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 2
 
 EVENT time: 1045.358521,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -2129,7 +2129,7 @@ A packet with seq. num 3 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2210 has arrived in B
 Expected checksum is 2210
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 3
 
 EVENT time: 1052.883789,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -2139,7 +2139,7 @@ A packet with seq. num 0 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2147 has arrived in B
 Expected checksum is 2147
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 0
 
 EVENT time: 1056.412109,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -2149,7 +2149,7 @@ A packet with seq. num 2 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2189 has arrived in B
 Expected checksum is 2164
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 2
 
 EVENT time: 1065.419434,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -2159,7 +2159,7 @@ A packet with seq. num 3 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2210 has arrived in B
 Expected checksum is 2210
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 3
 
 EVENT time: 1072.902954,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -2169,7 +2169,7 @@ A packet with seq. num 1 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2168 has arrived in B
 Expected checksum is 2168
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 1
 
 EVENT time: 1081.389526,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -2179,7 +2179,7 @@ A packet with seq. num 2 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2189 has arrived in B
 Expected checksum is 2189
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 2
 
 EVENT time: 1086.642700,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -2189,7 +2189,7 @@ A packet with seq. num 3 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2210 has arrived in B
 Expected checksum is 2210
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 3
 
 EVENT time: 1094.245728,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -2202,7 +2202,7 @@ A packet with seq. num 999999 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2168 has arrived in B
 Expected checksum is 1002166
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 999999
 
 EVENT time: 1103.566406,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -2213,7 +2213,7 @@ Expected seq. num is 4
 A packet with checksum 2189 has arrived in B
 Expected checksum is 2189
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 2
 
 EVENT time: 1107.351196,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -2226,7 +2226,7 @@ A packet with seq. num 3 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2210 has arrived in B
 Expected checksum is 2210
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 3
 
 EVENT time: 1116.928467,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -2237,21 +2237,21 @@ Expected seq. num is 4
 A packet with checksum 2168 has arrived in B
 Expected checksum is 2144
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 1
 
 EVENT time: 1121.413696,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 2 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2189 has arrived in B
 Expected checksum is 2189
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 2
 
 EVENT time: 1123.327759,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 3 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2210 has arrived in B
 Expected checksum is 2210
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 3
 
 EVENT time: 1123.897949,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -2264,14 +2264,14 @@ A packet with seq. num 1 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2168 has arrived in B
 Expected checksum is 2144
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 1
 
 EVENT time: 1137.494751,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 2 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2189 has arrived in B
 Expected checksum is 2189
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 2
 
 EVENT time: 1138.822754,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -2282,7 +2282,7 @@ Expected seq. num is 4
 A packet with checksum 2210 has arrived in B
 Expected checksum is 2184
           TOLAYER3: packet being lost
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 3
 
 EVENT time: 1141.333130,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -2292,14 +2292,14 @@ A packet with seq. num 1 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2168 has arrived in B
 Expected checksum is 2168
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 1
 
 EVENT time: 1148.160767,  type: 2, fromlayer3  entity: 1
 A packet with seq. num 2 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2189 has arrived in B
 Expected checksum is 2189
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 2
 
 EVENT time: 1149.233276,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -2310,7 +2310,7 @@ Expected seq. num is 4
 A packet with checksum 2210 has arrived in B
 Expected checksum is 1002206
           TOLAYER3: packet being corrupted
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 999999
 
 EVENT time: 1159.221191,  type: 2, fromlayer3  entity: 0
 Duplicate ack found
@@ -2321,7 +2321,7 @@ Expected seq. num is 4
 A packet with checksum 2168 has arrived in B
 Expected checksum is 2168
           TOLAYER3: packet being corrupted
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 1
 
 EVENT time: 1165.851807,  type: 2, fromlayer3  entity: 0
 Corrupted packet or checksum error...dropping
@@ -2331,7 +2331,7 @@ A packet with seq. num 2 has arrived in B
 Expected seq. num is 4
 A packet with checksum 2189 has arrived in B
 Expected checksum is 2189
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 2
 
 EVENT time: 1170.408203,  type: 2, fromlayer3  entity: 0
 Corrupted packet or checksum error...dropping
@@ -2342,7 +2342,7 @@ Expected seq. num is 4
 A packet with checksum 2210 has arrived in B
 Expected checksum is 2210
           TOLAYER3: packet being corrupted
-B has sent NAK to A
+B has sent NAK to A for the packet having seq. num 3
 
 EVENT time: 1172.174561,  type: 2, fromlayer3  entity: 0
 Duplicate ack found

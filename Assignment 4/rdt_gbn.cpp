@@ -275,6 +275,7 @@ void A_timerinterrupt(void)
     }
 
 
+    printf("Resending window....\n");
     for(int i=0;i<window.size();i++)
     {
         tolayer3(0,window[i]);
@@ -321,7 +322,7 @@ void B_input(struct pkt packet)
 
         tolayer3(1,packet_b);
 
-        printf("B has sent NAK to A\n");
+        printf("B has sent NAK to A for the packet having seq. num %d\n",packet.seqnum);
     }
     else
     {
@@ -336,7 +337,7 @@ void B_input(struct pkt packet)
 
             tolayer3(1,packet_b);
 
-            printf("B has sent NAK to A\n");
+            printf("B has sent NAK to A for the packet having seq. num %d\n",packet.seqnum);
         }
         else
         {
@@ -358,7 +359,7 @@ void B_input(struct pkt packet)
             expseq_b++;
             expseq_b=(expseq_b % 8);
 
-            printf("B has sent ACK to A\n");
+            printf("B has sent ACK to A for the packet having seq. num %d\n",packet.seqnum);
 
         }
 
