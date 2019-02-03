@@ -13,6 +13,7 @@ string datastring,generatorpolynimial,cm;
 int m,rows,columns;
 double p;
 vector<string>datablock;
+vector<string>datablock2;
 vector<double>randomprobabilities;
 
 
@@ -206,8 +207,6 @@ void CRCcalculation()
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 
     cm =cm+remainder;
-
-
 }
 
 
@@ -253,10 +252,12 @@ int main()
 
     //initialize the strings in vector
     datablock.resize(rows);
+    datablock2.resize(rows);
 
     for(int i=0; i<rows; i++)
     {
         datablock[i]="";
+        datablock2[i]="";
     }
 
     for(int i=0; i<datastringlength; i++)
@@ -346,7 +347,11 @@ int main()
 
     cout<< "received frame:\n";
     int l=cm.length();
-
+    int flagiserror[l];
+    for(int i=0; i<l; i++)
+    {
+        flagiserror[i]=0;
+    }
     // construct a trivial random generator engine from a time-based seed:
     unsigned seed = chrono::system_clock::now().time_since_epoch().count();
     default_random_engine generator(seed);
@@ -369,7 +374,7 @@ int main()
                 cm[i]='0';
 
             cout << cm[i];
-
+            flagiserror[i]=1;
             SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
         }
         else
@@ -378,7 +383,6 @@ int main()
 
 
     cout<< "\n\n\n";
-
 
 
     ///task 7: verify the correctness of the received frame
@@ -393,15 +397,65 @@ int main()
         cout<< "error detected\n\n\n";
 
 
+
+
     ///task 8:remove the CRC checksum and make block again
 
+    //removing crc
+
+    templen=generatorpolynimial.length();
+
+    vector<bool>flagiserror2[rows];
 
 
+    for(int i=1; i<=templen-1; i++)
+    {
+        cm.pop_back();
+    }
+
+    //make the received data block
+
+    templen=cm.length();
+    int idx=0;
 
 
+    for(int i=0; i<templen; i++)
+    {
+        datablock2[idx].push_back(cm[i]);
+        if(flagiserror[i]==0)
+            flagiserror2[idx].push_back(false);
+        else
+            flagiserror2[idx].push_back(true);
+
+        idx++;
+        if(idx==rows)
+        {
+            idx=0;
+        }
+    }
 
 
+    cout<< "data block after removing CRC checksum bits:\n";
 
+    for (int i=0; i<rows; i++)
+    {
+        for (int j=0; j<columns; j++)
+        {
+            if(flagiserror2[i][j]==true)
+            {
+                SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), RED);
+                cout<<datablock2[i][j];
+                SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
+            }
+            else
+                cout<<datablock2[i][j];
+        }
+
+        cout<< "\n";
+    }
+
+
+    cout<< "\n\n\n";
 
     return 0;
 }
