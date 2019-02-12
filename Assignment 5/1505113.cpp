@@ -214,7 +214,7 @@ void CRCcalculation()
 
 int main()
 {
-    freopen("input.txt","r",stdin);
+    //freopen("input.txt","r",stdin);
 
     int temp1,temp2,datastringlength,templen;
     string tempstr;
